@@ -55,7 +55,7 @@ app.delete('/todos/:id', (req, res) => {
     if (!doc) {
       return res.status(404).send('Todo was not found')
     }
-    res.status(200).send(doc)
+    res.status(200).send({doc});
   }, (e) => {
     res.status(400).send('There was an error fetching the Todo');
   });
